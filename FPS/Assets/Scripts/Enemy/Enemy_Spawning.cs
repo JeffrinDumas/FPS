@@ -6,7 +6,6 @@ public class Enemy_Spawning : MonoBehaviour {
 
 
 
-
 	// Use this for initialization
 	void Start () {
 		
@@ -16,4 +15,9 @@ public class Enemy_Spawning : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void SpawnWave()
+    {
+
+    }
 }
