@@ -10,7 +10,6 @@ public class Guns : MonoBehaviour
     private int dmg;
     private float reloadtime;
     private int magazinessize;
-    //private int magazines = 2;
 
     private void Start ()
     {

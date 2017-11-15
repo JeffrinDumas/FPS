@@ -24,7 +24,7 @@ public class Shoot : MonoBehaviour
     private void Update ()
     {
         timer -= Time.deltaTime;
-        if (InputManager.reload() && !reloading)
+        if (!reloading && (InputManager.reload() || bullets <= 0))
         {
             SetReloadTime();
         }
@@ -36,17 +36,10 @@ public class Shoot : MonoBehaviour
             Debug.DrawRay(transform.position, Camera.main.transform.forward * range);
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(transform.position, Camera.main.transform.forward, out hit, range))
-            {
-               
+            {             
                 if (hit.collider.gameObject.tag == "enemy")
                 {
                     hit.collider.gameObject.GetComponent<Enemy_Health>().TakeDamage(Guns.Getdmg());
-                    //Guns.getdmg();
-                    print("hit  " + "dmg:" + Guns.Getdmg());
-                }
-                else
-                {
-                   // print("mis  " + "dmg:" + Guns.Getdmg() + "fireSpeed" + Guns.Getfirespeed());
                 }
             }
         }
@@ -54,7 +47,6 @@ public class Shoot : MonoBehaviour
         {
             Reload(); 
         }
-       
     }
     public void SetReloadTime()
     {
