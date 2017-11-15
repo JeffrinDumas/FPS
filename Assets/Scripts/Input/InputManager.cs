@@ -32,7 +32,6 @@ public class InputManager : MonoBehaviour
 	{
         return Input.GetAxis(Strings.Movement.HORIZONTAL) > axisThreshhold;
 	}
-
     public bool Button1()
     {
         return Input.GetKeyDown(KeyCode.Alpha1);
@@ -53,7 +52,6 @@ public class InputManager : MonoBehaviour
     {
         return Input.GetKey(KeyCode.R); ;
     }
-
 
     /* 
      * functions that return values for the mouse position
